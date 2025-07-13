@@ -2,70 +2,93 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Meta para móvil y forzar esquema claro -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+
     <title>Invitación</title>
     <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    /* no fijamos height en 100% ni ocultamos overflow */
-  }
-  body {
-    overflow-x: hidden;    /* quita scroll horizontal si aparece */
-    overflow-y: auto;      /* permite scroll vertical */
-  }
-  svg {
-    display: block;
-    width: 100vw;          /* todo el ancho */
-    height: auto;          /* alto proporcional, no recortado */
-  }
+      /* Reset y layout */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f7f7f7 !important;
+        color: #000 !important;
+        filter: none !important;
+      }
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
 
- .modal {
-  display: none;
-  position: fixed; top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.8);
-  justify-content: center; align-items: center;
-  z-index: 1000;
-}
-.modal-content {
-  position: relative;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 90%; max-height: 90%;
-  display: flex; align-items: center;
-}
-.close {
-  position: absolute; top: 0.5rem; right: 1rem;
-  font-size: 2rem; cursor: pointer;
-}
-.photos-container {
-  flex: 1;
-  display: flex; justify-content: center; align-items: center;
-  overflow: hidden;
-}
-.photos-container img {
-  max-width: 100%; max-height: 80vh;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-.nav {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 1rem;
-  color: #333;
-  transition: color .2s;
-}
-.nav:hover {
-  color: #000;
-}
+      /* SVG responsivo */
+      svg {
+        display: block;
+        width: 100%; /* usa % en vez de vw */
+        height: auto; /* mantiene proporción y deja scroll */
+        filter: none !important;
+      }
 
-
-</style>
+      /* Modal con flechas */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .modal-content {
+        position: relative;
+        background: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        align-items: center;
+      }
+      .close {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .photos-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .photos-container img {
+        max-width: 100%;
+        max-height: 80vh;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+      .nav {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0 1rem;
+        color: #333;
+        transition: color 0.2s;
+      }
+      .nav:hover {
+        color: #000;
+      }
+    </style>
+  </head>
   <body>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -78,17 +101,17 @@
     >
       <defs>
         <filter id="textoSombra" x="0%" y="0%" width="100%" height="100%">
-             <feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="rgba(190, 167, 21, 0.79)"/>
+          <feDropShadow dx="4" dy="4" stdDeviation="4" flood-color="rgba(190, 167, 21, 0.79)" />
         </filter>
         <style type="text/css">
           <![CDATA[
             #contador {
             font-family: 'Arial Black', sans-serif;
-            font-size: 300px;             
-            fill: #333333;                
-            filter: url(#textoSombra);     
+            font-size: 300px;
+            fill: #333333;
+            filter: url(#textoSombra);
             }
-            
+
           .str8 {
             stroke: #A2761D;
             stroke-width: 20.82;
@@ -1058,17 +1081,7 @@
           />
         </g>
         <path class="fil22 str8" d="M792.07 4758.82l4055.67 0c106.27,0 193.22,86.95 193.22,193.22l0 514.4c0,106.27 -86.95,193.22 -193.22,193.22l-4055.67 0c-106.27,0 -193.22,-86.95 -193.22,-193.22l0 -514.4c0,-106.27 86.95,-193.22 193.22,-193.22z" />
-        <text
-            id="contador"
-            x="2700"
-            y="5300"
-            font-family="Arial, sans-serif"
-            font-size="400"       
-            fill="#000"
-            text-anchor="middle"
-            >
-            10d 12h 05m 23s
-        </text>
+        <text id="contador" x="2700" y="5300" font-family="Arial, sans-serif" font-size="400" fill="#000" text-anchor="middle">10d 12h 05m 23s</text>
         <line class="fil17 str9" x1="1885.97" y1="8748.44" x2="1885.97" y2="9779.59" />
         <path
           class="fil23"
@@ -1548,98 +1561,91 @@
 
     <!-- Modal para galería de fotos -->
     <div id="photoModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <button class="nav prev">&larr;</button>
-    <div id="modalPhotos" class="photos-container">
-      <!-- Aquí se mostrará la foto actual -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <button class="nav prev">&larr;</button>
+        <div id="modalPhotos" class="photos-container">
+          <!-- Aquí se mostrará la foto actual -->
+        </div>
+        <button class="nav next">&rarr;</button>
+      </div>
     </div>
-    <button class="nav next">&rarr;</button>
-  </div>
-</div>
 
     <script>
-    function actualizarContador() {
-      const targetDate = new Date("2025-07-31T00:00:00");
-      const now = new Date();
-      const diff = targetDate - now;
+      function actualizarContador() {
+        const targetDate = new Date("2025-07-31T00:00:00");
+        const now = new Date();
+        const diff = targetDate - now;
 
-      if (diff <= 0) {
-        document.getElementById('contador').textContent = "¡Evento iniciado!";
-        return;
+        if (diff <= 0) {
+          document.getElementById("contador").textContent = "¡Evento iniciado!";
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("contador").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
       }
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+      setInterval(actualizarContador, 1000);
+      actualizarContador();
 
-      document.getElementById('contador').textContent =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
+      const triggers = ["pngwing.com_x0020__x0028_57_x0029_.png_5", "_2160155027856"];
+      const gallery = [
+        "foto1.jpg",
+        "foto2.jpg",
+        "foto3.jpg",
+        // …
+      ];
 
-    setInterval(actualizarContador, 1000);
-    actualizarContador();
+      const modal = document.getElementById("photoModal");
+      const photosContainer = document.getElementById("modalPhotos");
+      const closeBtn = modal.querySelector(".close");
+      const prevBtn = modal.querySelector(".prev");
+      const nextBtn = modal.querySelector(".next");
 
+      let currentIndex = 0;
 
-    
-  const triggers = [
-    'pngwing.com_x0020__x0028_57_x0029_.png_5',
-    '_2160155027856'
-  ];
-  const gallery = [
-    'foto1.jpg',
-    'foto2.jpg',
-    'foto3.jpg',
-    // …
-  ];
+      function showPhoto(index) {
+        photosContainer.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = gallery[index];
+        photosContainer.appendChild(img);
+      }
 
-  const modal = document.getElementById('photoModal');
-  const photosContainer = document.getElementById('modalPhotos');
-  const closeBtn = modal.querySelector('.close');
-  const prevBtn = modal.querySelector('.prev');
-  const nextBtn = modal.querySelector('.next');
+      function openModal(startIndex = 0) {
+        currentIndex = startIndex;
+        showPhoto(currentIndex);
+        modal.style.display = "flex";
+      }
 
-  let currentIndex = 0;
+      // Asociar click en las imágenes SVG
+      triggers.forEach((id) => {
+        const svgImg = document.getElementById(id);
+        if (svgImg) {
+          svgImg.style.cursor = "pointer";
+          svgImg.addEventListener("click", () => openModal(0)); // o usa otro índice
+        }
+      });
 
-  function showPhoto(index) {
-    photosContainer.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = gallery[index];
-    photosContainer.appendChild(img);
-  }
+      // Navegación
+      prevBtn.onclick = () => {
+        currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
+        showPhoto(currentIndex);
+      };
+      nextBtn.onclick = () => {
+        currentIndex = (currentIndex + 1) % gallery.length;
+        showPhoto(currentIndex);
+      };
 
-  function openModal(startIndex = 0) {
-    currentIndex = startIndex;
-    showPhoto(currentIndex);
-    modal.style.display = 'flex';
-  }
-
-  // Asociar click en las imágenes SVG
-  triggers.forEach(id => {
-    const svgImg = document.getElementById(id);
-    if (svgImg) {
-      svgImg.style.cursor = 'pointer';
-      svgImg.addEventListener('click', () => openModal(0)); // o usa otro índice
-    }
-  });
-
-  // Navegación
-  prevBtn.onclick = () => {
-    currentIndex = (currentIndex - 1 + gallery.length) % gallery.length;
-    showPhoto(currentIndex);
-  };
-  nextBtn.onclick = () => {
-    currentIndex = (currentIndex + 1) % gallery.length;
-    showPhoto(currentIndex);
-  };
-
-  // Cerrar modal
-  closeBtn.onclick = () => modal.style.display = 'none';
-  modal.onclick = e => { if (e.target === modal) modal.style.display = 'none'; };
-
-
-
-  </script>
+      // Cerrar modal
+      closeBtn.onclick = () => (modal.style.display = "none");
+      modal.onclick = (e) => {
+        if (e.target === modal) modal.style.display = "none";
+      };
+    </script>
   </body>
 </html>
